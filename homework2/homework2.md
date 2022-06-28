@@ -73,4 +73,71 @@
 [lesson 7.3](https://asciinema.org/a/dZHEO5xzKFQZdcDR4S3jv3tm6)
 
 
+#### 软件包管理
 
+（1）
+- 查看安装版本
+     
+    >apt-cache policy tmux
+
+![1.2](1.2.png)
+
+- 查看安装路径
+    
+    >dpkg -L tmux
+
+![1.3](1.3.png)
+
+#### 文件管理
+
+- 查找文件名包含666的文件
+   >sudo find / -name '*666*'
+
+- 查找文件内容包含666的文件
+  >sudo grep -r '666'./ --exclude=*.cast
+
+![2.1](2.1.png)
+![2.3](2.3.png)
+
+#### 文件压缩与解压缩
+
+- zip使用'zip'压缩，用'unzip'解压缩
+![2.4](2.4.png)
+
+- gzip用'gzip'压缩，用'gzip -dv'解压缩
+  
+![2.5](2.5.png)
+
+- 用'tar -cvf'压缩，用'tar -xvf'解压缩
+  
+[![tar](https://asciinema.org/a/vDCstVHGQ7AwDU5clJnrIAIcx.svg)](https://asciinema.org/a/vDCstVHGQ7AwDU5clJnrIAIcx)
+
+- 用bzip2压缩，用bunzip2解压缩
+
+[![tar](https://asciinema.org/a/EKdSDmxt4ZTGEvrfV95bwTXdI.svg)](https://asciinema.org/a/EKdSDmxt4ZTGEvrfV95bwTXdI)
+  
+
+- 用'7z a -t7z -r'压缩，用'sudo 7z x 1.7z -r -o./'解压缩
+
+[![7z](https://asciinema.org/a/5spwuDYCofev9akndkpVD39Wl.svg)](https://asciinema.org/a/5spwuDYCofev9akndkpVD39Wl)
+
+- 用'rar a'压缩，用'rar x'解压缩
+
+[![rar](https://asciinema.org/a/hzaYrlULleHdYbWEaIKXLOJOG.svg)](https://asciinema.org/a/hzaYrlULleHdYbWEaIKXLOJOG)
+
+#### 进程管理实验
+
+[![进程管理](https://asciinema.org/a/iGM6u5GcN6tcj9R3yKPtvncSY.svg)](https://asciinema.org/a/iGM6u5GcN6tcj9R3yKPtvncSY)
+
+#### 硬件信息获取
+
+- 获取目标系统的CPU信息
+  > cat /proc/cpuinfo |grep 'model name'
+
+- 获取内存大小
+  > cat /proc/meminfo |grep MemTotal
+
+- 获取硬盘数量和容量信息
+  > sudo fdisk -l |grep Disk
+
+[![硬件信息获取](https://asciinema.org/a/59DDvaTA1bLaKD7QYEbj0ySzX.svg)](https://asciinema.org/a/59DDvaTA1bLaKD7QYEbj0ySzX)
