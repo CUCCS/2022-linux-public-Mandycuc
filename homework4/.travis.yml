@@ -1,0 +1,41 @@
+language: bash
+
+before_install:
+  - sudo apt-get update && sudo apt-get install -y shellcheck
+  - sudo apt-get install imagemagick 
+  - sudo apt-get install p7zip-full
+  - sudo apt-get install ghostscript
+
+script:
+  - wget "https://c4pr1c3.gitee.io/linuxsysadmin/exp/chap0x04/worldcupplayerinfo.tsv"
+  - wget "https://c4pr1c3.github.io/LinuxSysAdmin/exp/chap0x04/web_log.tsv.7z"
+  - 7z x -ot web_log.tsv.7z
+  - ls -l
+  - bash test1.sh -h
+  - bash test1.sh -q 10
+  - bash test1.sh -r 10%
+  - bash test1.sh -w 5 ziyi
+  - bash test1.sh -p Pre
+  - bash test1.sh -s Suf
+  - bash test1.sh -t
+  - echo "=============================="
+  - bash test2.sh -h
+  - bash test2.sh -s
+  - bash test2.sh -p
+  - bash test2.sh -n
+  - bash test2.sh -a
+  - echo "=============================="
+  - bash test3.sh -h
+  - bash test3.sh -o
+  - bash test3.sh -i
+  - bash test3.sh -u
+  - bash test3.sh -c
+  - bash test3.sh -f
+  - bash test3.sh -s /whats-new.html
+  - shellcheck test1.sh
+  - shellcheck test2.sh
+  - shellcheck test3.sh
+
+notifications:
+  email:
+    on_success: never
